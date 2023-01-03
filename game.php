@@ -90,7 +90,6 @@
                     <p><button type='submit' name='choice' value='1'>Решка</button></p>
                     ");
                 }
-                var_dump($_POST);
                 ?>
         </form>
     </div>

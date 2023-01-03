@@ -25,6 +25,6 @@ h4 {
     margin: 15px 0 0;
 }
 
-.disabled_radio + label {
+.level:disabled {
     color: #b3b3b3;
 }

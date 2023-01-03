@@ -22,29 +22,28 @@
                     if ($levelUnlocker == 1) {
                         if ($win >= 5) {
                             $levelUnlocker = 2;
-                            echo ("<p><h4>Вы победили!</h4></p>");
+                            echo ("<h4>Вы победили!</h4>");
                             echo ("<input type='hidden' name='levelUnlocker' value='$levelUnlocker'>");
                         } else {
-                            echo ("<p><h4>Вы проиграли!</h4></p>");
+                            echo ("<h4>Вы проиграли!</h4>");
                         }
                     } else {
                         if ($win >= 5) {
-                            echo ("<p><h4>Вы победили!</h4></p>");
+                            echo ("<h4>Вы победили!</h4>");
                         } else {
-                            echo ("<p><h4>Вы проиграли!</h4></p>");
+                            echo ("<h4>Вы проиграли!</h4>");
                         }
                     }
                 } else {
                     if ($win >= 5) {
                         $levelUnlocker = 1;
-                        echo ("<p><h4>Вы победили!</h4></p>");
+                        echo ("<h4>Вы победили!</h4>");
                         echo ("<input type='hidden' name='levelUnlocker' value='$levelUnlocker'>");
                     } else {
-                        echo ("<p><h4>Вы проиграли!</h4></p>");
+                        echo ("<h4>Вы проиграли!</h4>");
                     }
                 }
                 echo ("Побед: " . $win);
-                var_dump($_POST);
                 ?>
                 <input class="home_button" type="submit" value="Вернуться на главную">
             </div>
