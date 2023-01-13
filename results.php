@@ -15,15 +15,15 @@
         <form method="post" action="index.php">
             <div>
                 <?php
-                $win = $_POST["win"];
+                session_start();
+                $win = json_decode($_SESSION["win"]);
                 if (isset($_POST["levelUnlocker"])) {
-                    $levelUnlocker = $_POST["levelUnlocker"];
-                    echo ("<input type='hidden' name='levelUnlocker' value='$levelUnlocker'>");
+                    $levelUnlocker = json_decode($_SESSION["levelUnlocker"]);
                     if ($levelUnlocker == 1) {
                         if ($win >= 5) {
                             $levelUnlocker = 2;
-                            echo ("<h4>Вы победили!</h4>");
-                            echo ("<input type='hidden' name='levelUnlocker' value='$levelUnlocker'>");
+                            echo ("<h4>Вы победили! Разблокирована тяжелая сложность!</h4>");
+                            $_SESSION["levelUnlocker"] = json_encode($levelUnlocker);
                         } else {
                             echo ("<h4>Вы проиграли!</h4>");
                         }
@@ -37,13 +37,14 @@
                 } else {
                     if ($win >= 5) {
                         $levelUnlocker = 1;
-                        echo ("<h4>Вы победили!</h4>");
-                        echo ("<input type='hidden' name='levelUnlocker' value='$levelUnlocker'>");
+                        echo ("<h4>Вы победили! Разблокирована средняя сложность!</h4>");
+                        $_SESSION["levelUnlocker"] = json_encode($levelUnlocker);
                     } else {
                         echo ("<h4>Вы проиграли!</h4>");
                     }
                 }
                 echo ("Побед: " . $win);
+                var_dump($_SESSION);
                 ?>
                 <input class="home_button" type="submit" value="Вернуться на главную">
             </div>
